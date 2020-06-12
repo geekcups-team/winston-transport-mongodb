@@ -1,6 +1,6 @@
 {
   "name": "@geekcups/winston-transport-mongodb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MongoDB Transport with split options",
   "main": "build/index.js",
   "module": "build/index.es.js",

@@ -41,6 +41,7 @@ export class MongoDBTransport extends Transport {
   constructor(options: TransportOption) {
     super(options);
     this.name = options.name ?? 'mongodb';
+    this.level = options.level ?? 'info';
     this.logCollectionPrefix = options.logCollectionPrefix ?? 'log';
     this.logSplit = options.logSplit ?? LogSplitEnum.NONE;
     this.metaCollectionName = options.metaCollectionName ?? 'meta';
@@ -174,7 +175,7 @@ export class MongoDBTransport extends Transport {
       timestamp: now,
       level: info.level,
       message: util.format(info.message, ...(info.splat || [])),
-      meta: info.meta,
+      meta: info.metadata,
 
     };
     try {
